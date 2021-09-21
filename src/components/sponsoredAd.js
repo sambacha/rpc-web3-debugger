@@ -15,8 +15,8 @@ const SponsoredAd = ({ visible, setSponsorVisible }) => {
               <div className="flex-shrink-0 pt-0.5">
                 <img
                   className="h-10 w-10 rounded-full"
-                  src="%PUBLIC_URL%/built_nix.jpg"
-                  alt="Built with Nix"
+                  src="%PUBLIC_URL%/256_256.png"
+                  alt=""
                 />
               </div>
               <div className="ml-3 w-0 flex-1">
