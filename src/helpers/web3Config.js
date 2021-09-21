@@ -116,19 +116,19 @@ const Web3RpcCalls = {
   },
   eth_sign: {
     disabled: true,
-    description: '🚫 This method is not supported in EtherFlow!',
+    description: '🚫 This method is not supported in OpenRPCDebug!',
     web3: calls.web3.default.eth_sign,
     ethers: calls.ethers.default.eth_sign,
   },
   eth_signTransaction: {
     disabled: true,
-    description: '🚫 This method is not supported in EtherFlow!',
+    description: '🚫 This method is not supported in OpenRPCDebug!',
     web3: calls.web3.default.eth_signTransaction,
     ethers: calls.ethers.default.eth_signTransaction,
   },
   eth_sendTransaction: {
     disabled: true,
-    description: '🚫 This method is not supported in EtherFlow!',
+    description: '🚫 This method is not supported in OpenRPCDebug!',
     web3: calls.web3.default.eth_sendTransaction,
     ethers: calls.ethers.default.eth_sendTransaction,
   },
@@ -145,7 +145,7 @@ const Web3RpcCalls = {
   },
   eth_estimateGas: {
     disabled: true,
-    description: '🚫 This method is not YET supported in EtherFlow!',
+    description: '🚫 This method is not YET supported in OpenRPCDebug!',
     web3: calls.web3.default.eth_estimateGas,
     ethers: calls.ethers.default.eth_estimateGas,
   },
@@ -229,7 +229,7 @@ const Web3RpcCalls = {
   },
   eth_uninstallFilter: {
     disabled: true,
-    description: '🚫 This method is not YET supported in EtherFlow!',
+    description: '🚫 This method is not YET supported in OpenRPCDebug!',
     web3: calls.web3.default.eth_uninstallFilter,
     ethers: calls.ethers.default.eth_uninstallFilter,
   },

@@ -149,12 +149,8 @@ export const getCodeSampleFriendlyArguments = (
 ) => {
   let list = argumentList;
   const traceArgs = list.splice(0, argOffset); // remove trace arguments (if any)
-  const [
-    contract,
-    cleanAbi,
-    methodId,
-    ...methodSpecificArgs
-  ] = getContractFriendlyArguments(list, abi);
+  const [contract, cleanAbi, methodId, ...methodSpecificArgs] =
+    getContractFriendlyArguments(list, abi);
   let abiObj = cleanAbi;
   try {
     abiObj = JSON.parse(cleanAbi);

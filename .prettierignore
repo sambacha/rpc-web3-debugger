@@ -1,0 +1,6 @@
+*.css
+*.scss
+*.html
+*.min.js
+*.log
+*.test.js

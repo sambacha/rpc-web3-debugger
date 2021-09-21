@@ -15,30 +15,30 @@ const SponsoredAd = ({ visible, setSponsorVisible }) => {
               <div className="flex-shrink-0 pt-0.5">
                 <img
                   className="h-10 w-10 rounded-full"
-                  src="https://pbs.twimg.com/profile_images/880519774798835712/qzz95hUu_400x400.jpg"
+                  src="built_with_nix.jpg"
                   alt=""
                 />
               </div>
               <div className="ml-3 w-0 flex-1">
                 <p className="text-sm leading-5 font-medium text-gray-900">
-                  Sponsored by QuikNode
+                  Manifold Finance
                 </p>
                 <p className="mt-1 text-sm leading-5 text-gray-500">
-                  Huge thanks to QuikNode for letting us build EtherFlow with{' '}
+                  Infrastructure deployed and managed using{' '}
                   <span role="img" aria-label="lightning">
-                    ⚡️
+                   ❄️💊
                   </span>{' '}
-                  fast nodes.
+                  Nix
                 </p>
                 <div className="mt-4 flex">
                   <span className="inline-flex rounded-md shadow-sm">
                     <a
-                      href="https://quiknode.io/?utm_source=etherflow"
+                      href="https://manifoldfinance.com"
                       className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
                       target="_blank"
                       rel="noopener"
                     >
-                      Visit QuikNode
+                      Visit Manifold Finance
                     </a>
                   </span>
                 </div>

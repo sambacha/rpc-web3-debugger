@@ -30,7 +30,7 @@
     "prebuild": "npm run build:tailwind",
     "run": "concurrently \"react-scripts start\"",
     "start": "craco start",
-    "build": "craco build",
+    "build": "./build.sh",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

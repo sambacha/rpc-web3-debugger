@@ -198,7 +198,9 @@ const EthersCalls = {
   },
   eth_gasPrice: {
     exec: (provider, proto, ...args) => {
-      return provider.getGasPrice().then(resp => BigNumber.from(resp._hex).toString());
+      return provider
+        .getGasPrice()
+        .then((resp) => BigNumber.from(resp._hex).toString());
     },
     codeSample: (url, ...args) => {
       return ethersTemplate('getGasPrice()', 'gasPrice', url);
@@ -225,7 +227,9 @@ const EthersCalls = {
   },
   eth_getBalance: {
     exec: (provider, proto, ...args) => {
-      return provider.getBalance(...args).then(resp => BigNumber.from(resp._hex).toString());
+      return provider
+        .getBalance(...args)
+        .then((resp) => BigNumber.from(resp._hex).toString());
     },
     codeSample: (url, ...args) => {
       return ethersTemplate(
@@ -403,33 +407,33 @@ const EthersCalls = {
   eth_sign: {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
-        reject('EtherFlow does not support this method.')
+        reject('OpenRPCDebug does not support this method.')
       );
     },
     codeSample: (url, ...args) => {
-      return '/* Not Supported by EtherFlow */';
+      return '/* Not Supported by OpenRPCDebug */';
     },
     args: [],
   },
   eth_signTransaction: {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
-        reject('EtherFlow does not support this method.')
+        reject('OpenRPCDebug does not support this method.')
       );
     },
     codeSample: (url, ...args) => {
-      return '/* Not Supported by EtherFlow */';
+      return '/* Not Supported by OpenRPCDebug */';
     },
     args: [],
   },
   eth_sendTransaction: {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
-        reject('EtherFlow does not support this method.')
+        reject('OpenRPCDebug does not support this method.')
       );
     },
     codeSample: (url, ...args) => {
-      return '/* Not Supported by EtherFlow */';
+      return '/* Not Supported by OpenRPCDebug */';
     },
     args: [],
   },
@@ -479,11 +483,11 @@ const EthersCalls = {
   eth_estimateGas: {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
-        reject('EtherFlow does not support this method.')
+        reject('OpenRPCDebug does not support this method.')
       );
     },
     codeSample: (url, ...args) => {
-      return '/* Not Supported by EtherFlow */';
+      return '/* Not Supported by OpenRPCDebug */';
     },
     args: [],
   },
@@ -814,11 +818,11 @@ const EthersCalls = {
   eth_uninstallFilter: {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
-        reject('EtherFlow does not support this method.')
+        reject('OpenRPCDebug does not support this method.')
       );
     },
     codeSample: (url, ...args) => {
-      return '/* Not Supported by EtherFlow */';
+      return '/* Not Supported by OpenRPCDebug */';
     },
     args: [],
   },
@@ -826,12 +830,12 @@ const EthersCalls = {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
         reject(
-          'EtherFlow covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter.'
+          'OpenRPCDebug covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter.'
         )
       );
     },
     codeSample: (url, ...args) => {
-      return '/* EtherFlow covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter */';
+      return '/* OpenRPCDebug covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter */';
     },
     args: [],
   },
@@ -839,12 +843,12 @@ const EthersCalls = {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
         reject(
-          'EtherFlow covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter.'
+          'OpenRPCDebug covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter.'
         )
       );
     },
     codeSample: (url, ...args) => {
-      return '/* EtherFlow covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter */';
+      return '/* OpenRPCDebug covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter */';
     },
     args: [],
   },
@@ -852,12 +856,12 @@ const EthersCalls = {
     exec: (provider, proto, ...args) => {
       return new Promise((resolve, reject) =>
         reject(
-          'EtherFlow covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter.'
+          'OpenRPCDebug covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter.'
         )
       );
     },
     codeSample: (url, ...args) => {
-      return '/* EtherFlow covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter */';
+      return '/* OpenRPCDebug covers this method via eth_newFilter, eth_newBlockFilter and eth_newPendingTransactionFilter */';
     },
     args: [],
   },
@@ -1083,16 +1087,8 @@ const EthersCalls = {
   },
   trace_call: {
     exec: (provider, proto, ...args) => {
-      let [
-        traceType,
-        block,
-        from,
-        value,
-        contract,
-        abi,
-        method,
-        ...rest
-      ] = args;
+      let [traceType, block, from, value, contract, abi, method, ...rest] =
+        args;
       let iface = new ethers.utils.Interface(abi);
       const data = iface.encodeFunctionData(method, rest);
       if (value === '') value = null;

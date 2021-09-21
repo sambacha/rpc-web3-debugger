@@ -18,9 +18,8 @@ const TRACE_ARGS_OFFSET = 4;
 
 const MethodCallContainer = () => {
   const params = useParams();
-  const { codeSampleVisible, toggleSampleCode, abi, setAbi } = useContext(
-    AppContext
-  );
+  const { codeSampleVisible, toggleSampleCode, abi, setAbi } =
+    useContext(AppContext);
   const { addToLog } = useContext(LogContext);
   const logItem = useCallback(addToLog, []);
 
