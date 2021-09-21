@@ -1,0 +1,3 @@
+[submodule "minimal-jsonrpc-dapp-methods"]
+	path = minimal-jsonrpc-dapp-methods
+	url = https://github.com/sambacha/minimal-jsonrpc-dapp-methods
