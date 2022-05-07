@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CodeSample } from '../components';
 import { AppContext } from '../context';
-import { useParams } from '@reach/router';
+import { useParams } from '@gatsbyjs/reach-router';
 import { getCodeSampleFriendlyArguments } from '../helpers/contracts';
 
 const TRACE_CALL = 'trace_call';
