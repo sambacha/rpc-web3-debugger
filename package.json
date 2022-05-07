@@ -1,6 +1,6 @@
 {
-  "name": "openrpc-web3-debugger",
-  "version": "0.1.0",
+  "name": "rpc-web3-helper",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "src/index.js",
   "private": true,
