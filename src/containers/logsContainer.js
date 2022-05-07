@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useCallback } from 'react';
 import { Logs } from '../components';
 import { LogContext } from '../context';
-import { useParams } from '@reach/router';
+import { useParams } from '@gatsbyjs/reach-router';
 
 const LogsContainer = () => {
   const { logs, addToLog } = useContext(LogContext);

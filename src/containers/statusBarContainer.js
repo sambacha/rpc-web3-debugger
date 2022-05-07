@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from '../components';
-import { useParams } from '@reach/router';
+import { useParams } from '@gatsbyjs/reach-router';
 import web3State from '../helpers/web3State';
 
 const StatusBarContainer = () => {

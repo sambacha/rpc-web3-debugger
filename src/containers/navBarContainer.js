@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBar } from '../components';
-import { navigate, useParams } from '@reach/router';
+import { navigate, useParams } from '@gatsbyjs/reach-router';
 
 const NavBarContainer = () => {
   const params = useParams();

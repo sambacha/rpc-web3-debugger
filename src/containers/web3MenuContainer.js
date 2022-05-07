@@ -1,6 +1,6 @@
 import React from 'react';
 import { NeedURLMessage, Web3Menu } from '../components';
-import { navigate, useParams } from '@reach/router';
+import { navigate, useParams } from '@gatsbyjs/reach-router';
 
 const Web3MenuContainer = () => {
   const params = useParams();

@@ -13,7 +13,7 @@ import {
   SponsoredAdContainer,
 } from './containers';
 import { AppProvider } from './context';
-import { Router } from '@reach/router';
+import { Router } from '@gatsbyjs/reach-router';
 
 import './tailwind.output.css';
 

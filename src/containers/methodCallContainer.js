@@ -10,7 +10,7 @@ import {
   getFormInputsFromMethod,
   onUpdateAbi,
 } from '../helpers/contracts';
-import { navigate, useParams } from '@reach/router';
+import { navigate, useParams } from '@gatsbyjs/reach-router';
 
 const ETH_CALL = 'eth_call';
 const TRACE_CALL = 'trace_call';
