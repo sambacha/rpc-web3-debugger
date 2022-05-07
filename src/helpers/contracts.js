@@ -1,19 +1,23 @@
-const ERROR_MESSAGE_NO_ABI = 'No ABI provided';
-const ERROR_MESSAGE_PARSE_ABI =
-  'Error parsing ABI. Please ensure valid JSON format. Example: [{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]';
-const ERROR_MESSAGE_ABI_TOO_LONG = 'Please only pass one function object.';
-const ERROR_MESSAGE_ABI_NO_READ_FUNCTIONS =
-  'The ABI does not contain any READ functions.';
-const ERROR_MESSAGE_FETCH = 'Error fetching ABI. CORS header may not be set.';
+const ERROR_MESSAGE_NO_ABI = '[ERR]: No ABI provided';
+const ERROR_MESSAGE_PARSE_ABI = '[ERR]: Parsing ABI: Please ensure valid JSON format. Example: [{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}]';
+const ERROR_MESSAGE_ABI_TOO_LONG = '[ERR]: Please only pass one function object.';
+const ERROR_MESSAGE_ABI_NO_READ_FUNCTIONS = '[ERR]: The ABI does not contain any READ functions.';
+const ERROR_MESSAGE_FETCH = '[ERR]: Unable to fetching ABI. CORS header may not be set.';
 
+/**
+* @const getMethodDisplayName
+* Convert a function entity to a human-friendly string
+*/
 const getMethodDisplayName = ({ name, inputs }) => {
-  // Convert a function entity to a human-friendly string
   const inputTypesText = inputs.map((input, index) => input.type);
   return `${name}${inputs.length > 0 ? ` (${inputTypesText})` : ''}`;
 };
 
+/**
+* @const getMethodId
+* Convert a function to a unique ID
+*/
 const getMethodId = ({ name, inputs }) => {
-  // Convert a function to a unique ID
   const inputTypesText = inputs.map((input, index) => input.type);
   return `${name}${inputs.length > 0 ? `-${inputTypesText}` : ''}`;
 };
@@ -35,8 +39,8 @@ const getFragmentFromMethodId = (abi, methodId) => {
 const PLACEHOLDER_BASE_TYPE = {
   int: '255',
   bool: 'true',
-  address: '0x261b45d85ccfeabb11f022eba346ee8d1cd488c0',
-  string: 'example text',
+  address: '0x7109709ECfa91a80626fF3989D68f67F5b1DD12D',
+  string: 'hevm.eth',
   byte: '01',
 };
 
@@ -80,7 +84,7 @@ export const getFilteredMethods = (abi, isWriteAllowed) => {
         name: getMethodDisplayName(method),
       }));
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return [];
   }
 };
@@ -110,17 +114,17 @@ export const fetchOrParseAbi = async (abiVal, isWriteAllowed) => {
       return { error: ERROR_MESSAGE_ABI_NO_READ_FUNCTIONS };
     return { abi };
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return { error: ERROR_MESSAGE_PARSE_ABI };
   }
 };
 
+/** @export const formatContractArgs */
 export const formatContractArgs = (args, types) => {
   if (!args || !types) return null;
   return args.map((arg) => {
     if (/,/.test(arg)) {
       // Array value
-
       return arg.split(',');
     }
     return `${arg}`;
@@ -139,7 +143,8 @@ export const getContractFriendlyArguments = (argumentList, abi, argOffset) => {
   const abiFragment = [getFragmentFromMethodId(abi, methodId)];
   let args = [address, JSON.stringify(abiFragment), methodName];
   if (argTypes) args.push(...formatContractArgs(methodSpecificArgs, typesList));
-  return traceArgs.concat(args); // add back trace arguments
+   // add back trace arguments
+  return traceArgs.concat(args);
 };
 
 export const getCodeSampleFriendlyArguments = (
@@ -155,7 +160,7 @@ export const getCodeSampleFriendlyArguments = (
   try {
     abiObj = JSON.parse(cleanAbi);
   } catch (e) {
-    // do nothing
+     /** @dev do nothing */
   }
   let codeFriendlyArguments = [
     contract,
@@ -176,7 +181,8 @@ export const getFormInputsFromMethod = (
   const newFormInputs = getArgumentsFromMethodId(abi, methodId);
   if (newFormInputs)
     return [
-      ...formInputs.slice(0, 3 + argOffset), // Discard existing method-specific inputs
+      /** @dev Discard existing method-specific inputs */
+      ...formInputs.slice(0, 3 + argOffset), 
       ...newFormInputs,
     ];
   else return [...formInputs.slice(0, 3 + argOffset)];
