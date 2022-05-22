@@ -1,6 +1,6 @@
 {
-  "short_name": "Web3 RPC Debug",
-  "name": "Ethereum JSON RPC Debugger",
+  "short_name": "SecureRPC Explorer",
+  "name": "Ethereum JSON RPC Browser",
   "icons": [
     {
       "src": "favicon.ico",
