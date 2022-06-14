@@ -15,8 +15,8 @@ const SponsoredAd = ({ visible, setSponsorVisible }) => {
               <div className="flex-shrink-0 pt-0.5">
                 <img
                   className="h-10 w-10 rounded-full"
-                  src="%PUBLIC_URL%/256_256.png"
-                  alt=""
+                  src="https://raw.githubusercontent.com/sambacha/rpc-web3-debugger/update-vitals/public/manifold_finance.png"
+                  alt="Manifold Finance SecureRPC"
                 />
               </div>
               <div className="ml-3 w-0 flex-1">
@@ -24,11 +24,11 @@ const SponsoredAd = ({ visible, setSponsorVisible }) => {
                   Manifold Finance
                 </p>
                 <p className="mt-1 text-sm leading-5 text-gray-500">
-                  Infrastructure deployed and managed using{' '}
+                  Powered by{' '}
                   <span role="img" aria-label="lightning">
-                   ❄️💊
+                   SecureRPC
                   </span>{' '}
-                  Nix
+                  MEV Protection
                 </p>
                 <div className="mt-4 flex">
                   <span className="inline-flex rounded-md shadow-sm">
@@ -38,7 +38,7 @@ const SponsoredAd = ({ visible, setSponsorVisible }) => {
                       target="_blank"
                       rel="noopener"
                     >
-                      Telegram Manifold Finance
+                      Telegram for Manifold Finance
                     </a>
                   </span>
                 </div>
