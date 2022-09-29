@@ -11,7 +11,7 @@ const NavBar = ({ web3URL, setWeb3URL }) => {
               <div className="flex">
                 <div className="w-full">
                   <label htmlFor="search" className="sr-only">
-                    Eth Node URL
+                   JSON RPC URL
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -30,7 +30,7 @@ const NavBar = ({ web3URL, setWeb3URL }) => {
                     <input
                       id="search"
                       className="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:text-gray-900 sm:text-sm transition duration-150 ease-in-out"
-                      placeholder="Enter JSON RPC Endpoint URL, https://api.securerpc.com/v1"
+                      placeholder="https://api.securerpc.com/v1"
                       type="text"
                       defaultValue={web3URL}
                       onChange={(e) => setWeb3URL(e.target.value)}
