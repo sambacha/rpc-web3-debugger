@@ -39,8 +39,8 @@ const getFragmentFromMethodId = (abi, methodId) => {
 const PLACEHOLDER_BASE_TYPE = {
   int: '255',
   bool: 'true',
-  address: '0x7109709ECfa91a80626fF3989D68f67F5b1DD12D',
-  string: 'hevm.eth',
+  address: '0xA0766B65A4f7B1da79a1AF79aC695456eFa28644',
+  string: 'manifoldfinance.eth',
   byte: '01',
 };
 
