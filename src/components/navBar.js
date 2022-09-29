@@ -6,7 +6,7 @@ const NavBar = ({ web3URL, setWeb3URL }) => {
       <div className="w-full mx-auto px-2 sm:px-4 lg:px-8">
         <div className="relative flex items-center justify-between h-16  w-full">
           <div className="flex items-center px-2 lg:px-0 w-full">
-            <div className="flex-shrink-0 text-white font-bold">OpenRPC Debug Utility</div>
+            <div className="flex-shrink-0 text-white font-bold">SecureRpc Web3 RPC Explorer</div>
             <div className="hidden lg:block lg:ml-6 w-full">
               <div className="flex">
                 <div className="w-full">
@@ -30,7 +30,7 @@ const NavBar = ({ web3URL, setWeb3URL }) => {
                     <input
                       id="search"
                       className="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:text-gray-900 sm:text-sm transition duration-150 ease-in-out"
-                      placeholder="Enter Node Endpoint URL"
+                      placeholder="Enter JSON RPC Endpoint URL, https://api.securerpc.com/v1"
                       type="text"
                       defaultValue={web3URL}
                       onChange={(e) => setWeb3URL(e.target.value)}
